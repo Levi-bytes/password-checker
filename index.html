@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Has This Password Leaked?</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <main class="wrap">
+    <p class="eyebrow">check before you commit</p>
+    <h1>Has this password<br>already leaked?</h1>
+    <p class="sub">Checked against real breach data. Your password is never sent anywhere — only a fragment of its hash is.</p>
+
+    <div class="input-row">
+      <input type="password" id="pw" placeholder="Type a password to check" autocomplete="off" spellcheck="false" />
+      <button id="toggle" type="button" aria-label="Show password">👁</button>
+    </div>
+
+    <div class="meter" id="meter">
+      <div class="meter-fill" id="meterFill"></div>
+    </div>
+    <p class="meter-label" id="meterLabel">Start typing</p>
+
+    <section class="hash-panel" id="hashPanel" hidden>
+      <p class="hash-caption">Here's exactly what leaves your browser:</p>
+      <div class="hash-bar" id="hashBar" aria-hidden="true"></div>
+      <div class="hash-legend">
+        <span><i class="dot dot-sent"></i> sent to check (5 characters)</span>
+        <span><i class="dot dot-kept"></i> stays on your device (35 characters)</span>
+      </div>
+    </section>
+
+    <section class="result" id="result" hidden>
+      <div class="result-badge" id="resultBadge"></div>
+      <p class="result-text" id="resultText"></p>
+    </section>
+
+    <details class="how">
+      <summary>How does this actually work?</summary>
+      <p>
+        Your password is hashed with SHA-1 entirely inside your browser — the real password
+        never leaves your device. Only the first 5 characters of that hash are sent to the
+        Have I Been Pwned API. It responds with every breached hash sharing that prefix
+        (thousands of them), and the matching is finished locally. This is called
+        <strong>k-anonymity</strong>: the server never receives enough information to know
+        which password you checked.
+      </p>
+    </details>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
