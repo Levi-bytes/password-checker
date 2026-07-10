@@ -4,7 +4,6 @@ A client-side password strength and breach checker. No backend, no password
 ever leaves the browser in full — only a 5-character hash prefix is sent,
 using the same privacy technique real breach-checking services rely on.
 
-**Live demo:** _add your link here once hosted_
 
 ## How it works
 
@@ -33,6 +32,17 @@ file server:
 ```bash
 npx serve .
 ```
+## Run it locally
+
+```bash git clone https://github.com/Levi-bytes/password-checker.git
+cd password-checker
+npx serve .
+```
+
+Then open ' http://localhost:3000 '
+
+
+Opening index.html directly via file:// can block crypto.subtle in some browsers for security reasons — serving it locally avoids that.
 
 ## Deploy
 
