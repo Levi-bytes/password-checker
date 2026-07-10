@@ -3,7 +3,8 @@
 A client-side password strength and breach checker. No backend, no password
 ever leaves the browser in full — only a 5-character hash prefix is sent,
 using the same privacy technique real breach-checking services rely on.
-<img width="1366" height="768" alt="Screenshot (751)" src="https://github.com/user-attachments/assets/c2366df6-3260-43f2-911d-87f92abe5d26" />
+<img width="1366" height="768" alt="Screenshot (753)" src="https://github.com/user-attachments/assets/d4cd8b97-a709-4dd8-bef5-1643ef42f92a" />
+
 
 
 ## How it works
