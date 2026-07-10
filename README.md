@@ -34,9 +34,11 @@ npx serve .
 ```
 ## Run it locally
 
-bash ' git clone https://github.com/Levi-bytes/password-checker.git '
+\`\`\`bash
+git clone https://github.com/Levi-bytes/password-checker.git
 cd password-checker
 npx serve .
+\`\`\`
 
 Then open ' http://localhost:3000 '
 
